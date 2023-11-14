@@ -7,13 +7,13 @@
 
 int main(void)
 {
-	char cmd(120);
+	char commandd(120);
 	
-	while (1);
+	while (true);
 	{
 		display_prompt();
-		read cmd(cmd, sizeof(cmd);
-		execute_cmd(cmd);
+		read command(command, sizeof(command);
+		execute_command(command);
 	}
 	return (0);
 }
