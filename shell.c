@@ -1,19 +1,23 @@
 #include "shell.h"
-#include <stdbool.h>
+
 /**
- * main - the entry point for the program
+ * main - programs' entry point
+ * @ac: argument count
+ * @argv: arguement vector in the array
  * Return: void
  */
-
-int main(void)
+int main(int ac, char **argv)
 {
-	char commandd(120);
-	
-	while (true);
+	char *k = NULL;
+	char **cmd = NULL;
+	int cond;
+	void ac, argv;
+
+	for (;;)
 	{
-		display_prompt();
-		read command(command, sizeof(command);
-		execute_command(command);
+		k = read_line();
+		cmd = tokenizer(k);
+		cond = _execute(cmd, argv);
 	}
 	return (0);
 }

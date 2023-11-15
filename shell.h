@@ -16,5 +16,6 @@
 
 void kasee_print(const char *str);
 void display_prompt(void);
+int main(int ac, char **argv);
 
 #endif
