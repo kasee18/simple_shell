@@ -11,13 +11,19 @@ int main(int ac, char **argv)
 	char *k = NULL;
 	char **cmd = NULL;
 	int cond;
-	void ac, argv;
+	(void) ac;
+	(void) argv;
 
 	for (;;)
 	{
 		k = read_line();
+		if (k == NULL)/*on reaching EOF ctr + D*/
+		{
+			if (isatty(STDIN_FILENO))
+				write(1, "\n" 1);
+			return (cond);
+		}
+		free(k);
 		cmd = tokenizer(k);
-		cond = _execute(cmd, argv);
 	}
-	return (0);
 }
