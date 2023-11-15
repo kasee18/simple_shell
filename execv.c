@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <stdlib.h>
+#include <unistd.h>
 /**
  * execute_cmd - a function that executes files
  * @cmd: argument
@@ -7,6 +9,7 @@
 
 void execute_cmd(const char *cmd)
 {
+	char *cmd[] = {"/bin/ls", "-1", NULL};
 	pid_t child_pid = fork();
 
 	if (child_pid == -1)
@@ -16,7 +19,7 @@ void execute_cmd(const char *cmd)
 	}
 	else if (child_pid == 0)
 	{
-		execve(cmd, cmd, (char *)NULL);
+		if execve(cmd[0], cmd, == NULL)
 		perror("execve");
 		exit(EXIT_FAILURE);
 	}
@@ -24,4 +27,5 @@ void execute_cmd(const char *cmd)
 	{
 		wait(NULL);
 	}
+	return (0);
 }
